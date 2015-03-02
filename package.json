@@ -9,6 +9,15 @@
   "engines": {
     "atom": "*"
   },
+  "keywords": [
+    "markdown",
+    "format",
+    "reformat",
+    "fix",
+    "formatting",
+    "tidy",
+    "tidy-markdown"
+  ],
   "license": "MIT",
   "main": "./lib/index",
   "repository": "https://github.com/slang800/atom-tidy-markdown"
