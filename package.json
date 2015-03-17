@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "dependencies": {
     "emissary": "1.x",
-    "tidy-markdown": "0.x"
+    "tidy-markdown": "git://github.com/slang800/tidy-markdown#v0.2.0"
   },
   "engines": {
     "atom": "*"
