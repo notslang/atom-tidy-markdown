@@ -8,9 +8,10 @@ class TidyMarkdown
     @subscribe atom.workspace.eachEditor (editor) =>
       @handleEvents(editor)
 
-    @subscribeToCommand atom.workspaceView, 'tidy-markdown:run', =>
-      if editor = atom.workspace.getActiveEditor()
-        @run(editor, editor.getGrammar().scopeName)
+    atom.commands.add 'atom-text-editor',
+      'tidy-markdown:run': =>
+        if editor = atom.workspace.getActiveEditor()
+          @run(editor, editor.getGrammar().scopeName)
 
   destroy: ->
     @unsubscribe()
