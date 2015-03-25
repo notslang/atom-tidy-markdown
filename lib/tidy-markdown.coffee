@@ -34,7 +34,12 @@ class TidyMarkdown
     if grammarScopeName isnt 'source.gfm' then return
     buffer = editor.getBuffer()
     text = buffer.getText()
-    fixedText = tidyMarkdown(text)
+    fixedText = tidyMarkdown(
+      text
+      ensureFirstHeaderIsH1: atom.config.get(
+        'tidy-markdown.ensureFirstHeaderIsH1'
+      )
+    )
     if text isnt fixedText
       buffer.setTextViaDiff(fixedText)
 
