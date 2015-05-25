@@ -1,7 +1,7 @@
 {
   "name": "tidy-markdown",
   "description": "Fix ugly markdown.",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "dependencies": {
     "tidy-markdown": "git://github.com/slang800/tidy-markdown#v0.3.2"
   },
