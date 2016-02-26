@@ -2,6 +2,8 @@
   "name": "tidy-markdown",
   "description": "Fix ugly markdown.",
   "version": "1.0.0",
+  "author": "Sean Lang <slang800@gmail.com>",
+  "bugs": "https://github.com/slang800/atom-tidy-markdown/issues",
   "dependencies": {
     "tidy-markdown": "git://github.com/slang800/tidy-markdown#v0.3.2"
   },
@@ -9,11 +11,15 @@
     "atom": "*"
   },
   "keywords": [
-    "markdown",
-    "format",
-    "reformat",
     "fix",
+    "format",
     "formatting",
+    "markdown",
+    "md",
+    "pretty",
+    "reformat",
+    "styleguide",
+    "tables",
     "tidy",
     "tidy-markdown"
   ],
