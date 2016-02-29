@@ -1,4 +1,5 @@
 # Tidy Markdown
+
 Uses [tidy-markdown](http://github.com/slang800/tidy-markdown) to fix and reformat ugly Markdown.
 
 You can run it on-save:
