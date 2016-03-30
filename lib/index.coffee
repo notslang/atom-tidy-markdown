@@ -1,21 +1,12 @@
 {CompositeDisposable} = require 'atom'
-tidyMarkdown = require 'tidy-markdown'
+tidyMarkdownFn = require 'tidy-markdown'
 
-module.exports =
-  subscriptions: null
-
-  config:
-    runOnSave:
-      type: 'boolean'
-      default: true
-    ensureFirstHeaderIsH1:
-      type: 'boolean'
-      default: true
-
-  activate: ->
+class TidyMarkdown
+  constructor: ->
     @subscriptions = new CompositeDisposable()
     @subscriptions.add atom.workspace.observeTextEditors (editor) =>
       @handleEvents(editor)
+
     @subscriptions.add atom.commands.add 'atom-workspace',
       'tidy-markdown:run': => @run()
 
@@ -46,7 +37,7 @@ module.exports =
     if editor.getGrammar().scopeName isnt 'source.gfm' then return
     buffer = editor.getBuffer()
     text = buffer.getText()
-    fixedText = tidyMarkdown(
+    fixedText = tidyMarkdownFn(
       text
       ensureFirstHeaderIsH1: atom.config.get(
         'tidy-markdown.ensureFirstHeaderIsH1'
@@ -54,3 +45,11 @@ module.exports =
     )
     if text isnt fixedText
       buffer.setTextViaDiff(fixedText)
+
+module.exports =
+  activate: ->
+    @tidyMarkdown = new TidyMarkdown()
+
+  deactivate: ->
+    @tidyMarkdown?.destroy()
+    @tidyMarkdown = null

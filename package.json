@@ -4,6 +4,17 @@
   "version": "2.0.0",
   "author": "Sean Lang <slang800@gmail.com>",
   "bugs": "https://github.com/slang800/atom-tidy-markdown/issues",
+  "configSchema": {
+    "runOnSave": {
+      "type": "boolean",
+      "default": true
+    },
+    "ensureFirstHeaderIsH1": {
+      "type": "boolean",
+      "default": true,
+      "description": "When enabled, we make sure that the \"root-level\" header of the document is an H1. If you're working with files that are fragments of a larger document, then disabling this option might be needed."
+    }
+  },
   "dependencies": {
     "tidy-markdown": "git://github.com/slang800/tidy-markdown#v1.0.0"
   },
