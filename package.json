@@ -23,7 +23,7 @@
     "tidy",
     "tidy-markdown"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0",
   "main": "./lib/index",
   "repository": "https://github.com/slang800/atom-tidy-markdown"
 }
